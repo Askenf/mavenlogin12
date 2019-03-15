@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 //根据商品id获取商品信息
-@WebServlet(name = "getCommodity")
-public class getCommodity extends HttpServlet {
+@WebServlet(name = "getCommodityById")
+public class getCommodityById extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //设置网页响应类型
         response.setContentType("text/html");
-        //实现具体操作
-//        String account = request.getParameter("account");
+        //获取网页传参
+        String goodsId = request.getParameter("goodsId");
 //        String pwd = request.getParameter("pwd");
-//        System.out.println(account+":"+pwd);
-
+        System.out.println("goodsId:"+goodsId);
+        int goodsIdInt = Integer.parseInt(goodsId);
 
 
 //            response.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,6 +35,7 @@ public class getCommodity extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 //商品id=1
         goodsInfo goodsInfo = new goodsInfo();
+        goodsInfo.setGoodsName("铜制印章");
         goodsInfo.setGoodsSKU(2);
         goodsInfo.setGoodsId(1);
         goodsInfo.setGoodsPrice(100);
@@ -48,6 +49,7 @@ public class getCommodity extends HttpServlet {
         goodsInfo.setContent("商品介绍详情这是很好的商品，请一定要买上一两个，走过路过不要错过啊，一块钱俩，两块钱仨，三块钱四个啦");
 //商品id=2
         goodsInfo goodsInfo1 = new goodsInfo();
+        goodsInfo1.setGoodsName("回墨印章");
         goodsInfo1.setGoodsSKU(4);
         goodsInfo1.setGoodsId(2);
         goodsInfo1.setGoodsPrice(200);
@@ -62,11 +64,22 @@ public class getCommodity extends HttpServlet {
 //        商品1
         JSONObject jsonObject = JSONObject.fromObject(goodsInfo);
         System.out.println(jsonObject.toString());
-        response.getWriter().write(jsonObject.toString());
+//        response.getWriter().write(jsonObject.toString());
 //        商品2
         JSONObject jsonObject1 = JSONObject.fromObject(goodsInfo1);
         System.out.println(jsonObject1.toString());
-        response.getWriter().write(jsonObject1.toString());
+//        response.getWriter().write(jsonObject1.toString());
+        String result = "";
+        switch (goodsIdInt){
+            default:
+                result = "没有匹配的商品";
+                break;
+            case 1:
+                result = jsonObject.toString();
+            case 2:
+                result = jsonObject1.toString();
+        }
+        response.getWriter().write(result);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

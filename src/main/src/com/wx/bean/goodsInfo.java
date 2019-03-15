@@ -2,6 +2,24 @@ package com.wx.bean;
 
 public class goodsInfo {
     private int goodsId;
+    private String goodsName;
+    private int goodsType;
+
+    public int getGoodsType() {
+        return goodsType;
+    }
+
+    public void setGoodsType(int goodsType) {
+        this.goodsType = goodsType;
+    }
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
+    }
 
     private String goodsTitle;
 
@@ -17,11 +35,16 @@ public class goodsInfo {
 
     private String goodsImg;
 
-    public goodsInfo() {
-    }
+    private String goodsImg2;
+    //说明
+    private String goodsMsg;
+    //注意事项
+    private String goodsNote;
 
-    public goodsInfo(int goodsId, String goodsTitle, double goodsPrice, double goodsFreight, int goodsSKU, int goodsSellNum, String content, String goodsImg) {
+    public goodsInfo(int goodsId, String goodsName, int goodsType, String goodsTitle, double goodsPrice, double goodsFreight, int goodsSKU, int goodsSellNum, String content, String goodsImg, String goodsImg2, String goodsMsg, String goodsNote) {
         this.goodsId = goodsId;
+        this.goodsName = goodsName;
+        this.goodsType = goodsType;
         this.goodsTitle = goodsTitle;
         this.goodsPrice = goodsPrice;
         this.goodsFreight = goodsFreight;
@@ -29,7 +52,39 @@ public class goodsInfo {
         this.goodsSellNum = goodsSellNum;
         this.content = content;
         this.goodsImg = goodsImg;
+        this.goodsImg2 = goodsImg2;
+        this.goodsMsg = goodsMsg;
+        this.goodsNote = goodsNote;
     }
+
+    public String getGoodsImg2() {
+        return goodsImg2;
+    }
+
+    public void setGoodsImg2(String goodsImg2) {
+        this.goodsImg2 = goodsImg2;
+    }
+
+    public String getGoodsMsg() {
+        return goodsMsg;
+    }
+
+    public void setGoodsMsg(String goodsMsg) {
+        this.goodsMsg = goodsMsg;
+    }
+
+    public String getGoodsNote() {
+        return goodsNote;
+    }
+
+    public void setGoodsNote(String goodsNote) {
+        this.goodsNote = goodsNote;
+    }
+
+    public goodsInfo() {
+    }
+
+
 
     public String getGoodsTitle() {
         return goodsTitle;
