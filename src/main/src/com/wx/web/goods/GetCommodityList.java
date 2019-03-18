@@ -1,4 +1,4 @@
-package com.wx.web;
+package com.wx.web.goods;
 
 import com.wx.bean.goodsInfo;
 import net.sf.json.JSONObject;

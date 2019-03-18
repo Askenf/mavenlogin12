@@ -35,7 +35,7 @@
     <!--根据ID获取商品信息-->
     <servlet>
         <servlet-name>getCommodityById</servlet-name>
-        <servlet-class>com.wx.web.getCommodityById</servlet-class>
+        <servlet-class>com.wx.web.goods.getCommodityById</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getCommodityById</servlet-name>
@@ -44,7 +44,7 @@
     <!--根据类型获取商品信息-->
     <servlet>
         <servlet-name>getCommodityByType</servlet-name>
-        <servlet-class>com.wx.web.GetCommodityByType</servlet-class>
+        <servlet-class>com.wx.web.goods.GetCommodityByType</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getCommodityByType</servlet-name>
@@ -54,7 +54,7 @@
     <!--根据类型获取商品信息列表-->
     <servlet>
         <servlet-name>getCommodityList</servlet-name>
-        <servlet-class>com.wx.web.GetCommodityList</servlet-class>
+        <servlet-class>com.wx.web.goods.GetCommodityList</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getCommodityList</servlet-name>

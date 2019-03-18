@@ -1,5 +1,6 @@
-package com.wx.web;
+package com.wx.web.goods;
 
+import com.wx.bean.StatusCode;
 import com.wx.bean.goodsInfo;
 import com.wx.bean.userInfo;
 import net.sf.json.JSONObject;
@@ -47,6 +48,8 @@ public class getCommodityById extends HttpServlet {
         goodsInfo.setGoodsSellNum(1000);
         goodsInfo.setGoodsTitle("这是商品标题1");
         goodsInfo.setContent("商品介绍详情这是很好的商品，请一定要买上一两个，走过路过不要错过啊，一块钱俩，两块钱仨，三块钱四个啦");
+//        goodsInfo.setCode(1);
+//        goodsInfo.setMsg("查询成功");
 //商品id=2
         goodsInfo goodsInfo1 = new goodsInfo();
         goodsInfo1.setGoodsName("回墨印章");
@@ -64,22 +67,33 @@ public class getCommodityById extends HttpServlet {
 //        商品1
         JSONObject jsonObject = JSONObject.fromObject(goodsInfo);
         System.out.println(jsonObject.toString());
+        JSONObject jsonObject2 = new JSONObject();
+        String result = "";
+        jsonObject2.put(result,jsonObject);
+        jsonObject2.put("code",1);
+        jsonObject2.put("msg","查询成功");
+//        StatusCode statusCode = new StatusCode();
+//        statusCode.setCode(1);
+//        statusCode.setMsg("查询成功");
+//        JSONObject.fromObject(statusCode);
 //        response.getWriter().write(jsonObject.toString());
 //        商品2
         JSONObject jsonObject1 = JSONObject.fromObject(goodsInfo1);
-        System.out.println(jsonObject1.toString());
+        System.out.println(jsonObject2.toString());
 //        response.getWriter().write(jsonObject1.toString());
-        String result = "";
-        switch (goodsIdInt){
-            default:
-                result = "没有匹配的商品";
-                break;
-            case 1:
-                result = jsonObject.toString();
-            case 2:
-                result = jsonObject1.toString();
-        }
-        response.getWriter().write(result);
+
+
+
+//        switch (goodsIdInt){
+//            default:
+//                result = "没有匹配的商品";
+//                break;
+//            case 1:
+//                result = jsonObject.toString();
+//            case 2:
+//                result = jsonObject1.toString();
+//        }
+//        response.getWriter().write(result);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -40,6 +40,26 @@ public class goodsInfo {
     private String goodsMsg;
     //注意事项
     private String goodsNote;
+    //状态码
+    private int code;
+    //信息
+    private String msg;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public goodsInfo(int goodsId, String goodsName, int goodsType, String goodsTitle, double goodsPrice, double goodsFreight, int goodsSKU, int goodsSellNum, String content, String goodsImg, String goodsImg2, String goodsMsg, String goodsNote) {
         this.goodsId = goodsId;
